@@ -1,6 +1,6 @@
-# Nesta::Plugin::Subpages
+# Nesta Subpages Plugin
 
-Add a two new methods to the @Nesta::Page@ class that finds any subpages
+Add two new methods to the @Nesta::Page@ class that finds any subpages
 for an index page. A subpage is considered to be a sibling page in the
 same directory as the index page and any index pages within immediate
 subdirectories. For example:
