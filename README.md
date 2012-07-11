@@ -1,6 +1,6 @@
 # Nesta Subpages Plugin
 
-Add two new methods to the @Nesta::Page@ class that finds any subpages
+Add two new methods to the `Nesta::Page` class that finds any subpages
 for an index page. A subpage is considered to be a sibling page in the
 same directory as the index page and any index pages within immediate
 subdirectories. For example:
@@ -17,15 +17,15 @@ subdirectories. For example:
     Page.find_by_path('parent').subpages() => [page-1, page-2, subdir-1]
 
 The returned array contains the Page instances themselves, not their
-string paths/
+string paths.
 
-Lastly, there is also @#has_subpages?@ helper method that returns true
+Lastly, there is also `#has_subpages?` helper method that returns true
 or false if the page has any subpages.
 
 Subpages are cached within an instance variable the first time that
-@#subpages@ is called, but this should not be a problem in most cases.
+`#subpages` is called, but this should not be a problem in most cases.
 
-Also, there is a helper defined called @subpages_for@ that takes either
+Also, there is a helper defined called `subpages_for` that takes either
 a Page instance or a string path and returns the same array.
 
 ## Installation
@@ -44,7 +44,7 @@ Or install it yourself as:
 
 ## Usage
 
-Not much to do! Simply call the #subpages@ method on your Page object
+Not much to do! Simply call the `#subpages` method on your Page object
 when you want to use the array of subpages! Easy peasy, m'friend. For
 example, in the sidebar, you might do this:
 
