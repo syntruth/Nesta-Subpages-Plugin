@@ -17,16 +17,20 @@ subdirectories. For example:
     Page.find_by_path('parent').subpages() => [page-1, page-2, subdir-1]
 
 The returned array contains the Page instances themselves, not their
-string paths.
+string paths, and they will be sorted based on their titles.
 
-Lastly, there is also `#has_subpages?` helper method that returns true
-or false if the page has any subpages.
+Next, there is also `#has_subpages?` helper method that returns true or
+false if the page has any subpages.
 
 Subpages are cached within an instance variable the first time that
 `#subpages` is called, but this should not be a problem in most cases.
 
 Also, there is a helper defined called `subpages_for` that takes either
 a Page instance or a string path and returns the same array.
+
+Lastly, if for some reason you do *not* want a subpage listed, merely
+give it the metadata tag of `skip subpage: true` and it will indeed be
+skipped in the list.
 
 ## Installation
 
