@@ -32,6 +32,16 @@ Lastly, if for some reason you do *not* want a subpage listed, merely
 give it the metadata tag of `skip subpage: true` and it will indeed be
 skipped in the list.
 
+There are two options that you can pass to `subpages` in a hash to
+modify what it does:
+
+    :do_sort         - Defaults to true; sorts the pages by title.
+    :include_subdirs - Defaults to true; includes index pages of
+                       immediate subdirectories.
+
+Also, if you give the method a block, each page will be yielded and the
+method will return nil.
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -57,7 +67,12 @@ example, in the sidebar, you might do this:
         %h1 Subpages
         - display_menu(@page.subpages, :class => "menu")
 
-        
+Or, if you wanna iterate of the pages:
+
+    - @page.subpages do |page|
+      = page.title
+
+
 # Contributing
 
 1. Fork it
