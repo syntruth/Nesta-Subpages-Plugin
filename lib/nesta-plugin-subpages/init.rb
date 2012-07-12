@@ -60,12 +60,9 @@ module Nesta
           # If we are allowed to include the sub-directory
           # index pages, do so. If no index page is detected, 
           # move on to the next entry.
-          if options[:include_subdirs]
-            idxpth = File.join(entry, 'index.%s')
-            next unless FORMATS.detect {|fmt| File.exists?(idxpth % fmt)}
-          else
-            next
-          end
+          next unless options[:include_subdirs]
+          idxpth = File.join(entry, 'index.%s')
+          next unless FORMATS.detect {|fmt| File.exists?(idxpth % fmt)}
         else
           # Ignore any file that isn't a page.
           next unless entry.match(/\.(#{fmts})$/)
